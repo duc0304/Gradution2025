@@ -426,7 +426,7 @@ export default function Home() {
             <div className="bg-white rounded-xl md:rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
               {/* Instructions Header */}
               <div className="bg-gray-900 px-4 md:px-8 py-4 md:py-6">
-                <h3 className="text-lg md:text-3xl font-lalezar font-bold text-blue text-center">
+                <h3 className="text-lg md:text-3xl font-lalezar font-bold text-white text-center">
                   📖 HƯỚNG DẪN SỬ DỤNG HỆ THỐNG
                 </h3>
               </div>
