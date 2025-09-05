@@ -216,13 +216,13 @@ export default function Home() {
                 💡
               </span>
               <span className="text-gray-600 font-medium text-xs md:text-lg text-center">
-                Nhập từ khóa và nhấn Enter hoặc click "TÌM KIẾM"
+                Nhập từ khóa và nhấn Enter hoặc click &quot;TÌM KIẾM&quot;
               </span>
             </div>
             {searchQuery && (
               <div className="mt-2 md:mt-3 inline-flex items-center bg-blue-50 px-2.5 md:px-4 py-1.5 md:py-2 rounded-full shadow-sm border border-blue-200 max-w-full">
                 <span className="text-blue-600 font-medium text-xs md:text-sm text-center break-words">
-                  🔍 Đang hiển thị kết quả cho: "{searchQuery}"
+                  🔍 Đang hiển thị kết quả cho: &quot;{searchQuery}&quot;
                 </span>
               </div>
             )}
