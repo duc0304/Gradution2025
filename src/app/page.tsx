@@ -126,17 +126,17 @@ export default function Home() {
   };
 
   const getGradeColor = (grade: string) => {
-    switch (grade?.toLowerCase()) {
-      case "xuất sắc":
-        return "bg-gradient-to-r from-yellow-400 to-yellow-600 text-white";
-      case "giỏi":
-        return "bg-gradient-to-r from-green-500 to-green-700 text-white";
-      case "khá":
-        return "bg-gradient-to-r from-blue-500 to-blue-700 text-white";
-      case "trung bình":
-        return "bg-gradient-to-r from-gray-500 to-gray-700 text-white";
-      default:
-        return "bg-gradient-to-r from-gray-400 to-gray-600 text-white";
+    switch (grade?.toLowerCase()) {    
+  case "xuất sắc":
+    return "bg-yellow-500 text-white";
+  case "giỏi":
+    return "bg-green-600 text-white";
+  case "khá":
+    return "bg-blue-600 text-white";
+  case "trung bình":
+    return "bg-gray-600 text-white";
+  default:
+    return "bg-gray-500 text-white";
     }
   };
 
@@ -164,7 +164,7 @@ export default function Home() {
         </div>
 
         {/* Decorative bottom border */}
-        <div className="h-1 bg-gradient-to-r from-red-800 via-red-600 to-red-800"></div>
+        <div className="h-1 bg-red-800"></div>
       </header>
 
       <main className="container mx-auto px-4 py-6 md:py-12">
@@ -282,7 +282,7 @@ export default function Home() {
                         className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
                       >
                         {/* Card Header */}
-                        <div className="bg-gradient-to-r from-[#AA1D2B] to-red-700 px-4 md:px-8 py-3 md:py-6">
+                        <div className="bg-[#AA1D2B] px-4 md:px-8 py-3 md:py-6">
                           <div className="flex items-center justify-between">
                             <h3 className="text-xl md:text-4xl font-lalezar font-bold text-white">
                               {record.ho_ten_day_du}
@@ -353,7 +353,7 @@ export default function Home() {
                             </div>
                           </summary>
 
-                          <div className="p-3 md:p-6 bg-gradient-to-br from-gray-50 to-gray-100">
+                          <div className="p-3 md:p-6 bg-gray-100">
                             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
                               {Object.entries(secondaryData).map(
                                 ([key, value]) => (
