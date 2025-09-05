@@ -42,8 +42,8 @@ const loadStudentData = (): StudentRecord[] => {
     const parseResult = Papa.parse(csvText, { header: false })
     
     const cleanData = parseResult.data
-      .filter((row: any) => row && row.length >= 14)
-      .map((row: any) => ({
+      .filter((row: unknown): row is unknown[] => Array.isArray(row) && row.length >= 14)
+      .map((row) => ({
         id: row[0],
         ky_hoc: row[1],
         mssv: row[2],
