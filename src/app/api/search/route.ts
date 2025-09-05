@@ -130,20 +130,26 @@ export async function GET(request: NextRequest) {
     const results = searchStudents(data, query)
     
     // Format response data (chỉ trả fields cần thiết)
-    const formattedResults = results.map(record => ({
-      mssv: record.mssv,
-      ho_ten_day_du: record.ho_ten_day_du,
-      ngay_sinh: record.ngay_sinh,
-      que_quan: record.que_quan,
-      gioi_tinh: record.gioi_tinh,
-      hang_bang: record.hang_bang,
-      nganh: record.nganh,
-      lop: record.lop,
-      cpa: record.cpa,
-      truong: record.truong,
-      trinh_do: record.trinh_do,
-      ky_hoc: record.ky_hoc,
-    }))
+    const formattedResults = results.map(record => {
+      // Xử lý ẩn 2 số cuối của CPA
+      const originalCPA = parseFloat(record.cpa);
+      const maskedCPA = originalCPA ? originalCPA.toFixed(2).slice(0, -2) + "xx" : "0.xx";
+      
+      return {
+        mssv: record.mssv,
+        ho_ten_day_du: record.ho_ten_day_du,
+        ngay_sinh: record.ngay_sinh,
+        que_quan: record.que_quan,
+        gioi_tinh: record.gioi_tinh,
+        hang_bang: record.hang_bang,
+        nganh: record.nganh,
+        lop: record.lop,
+        cpa: maskedCPA,
+        truong: record.truong,
+        trinh_do: record.trinh_do,
+        ky_hoc: record.ky_hoc,
+      };
+    })
     
     // Response với metadata
     return NextResponse.json({

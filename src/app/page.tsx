@@ -140,13 +140,22 @@ export default function Home() {
     }
   };
 
-  const getCPAColor = (cpa: string) => {
-    const score = parseFloat(cpa);
-    if (score >= 3.6) return "text-yellow-600 font-bold"; // Xuất sắc
-    if (score >= 3.2) return "text-green-600 font-bold"; // Giỏi
-    if (score >= 2.5) return "text-blue-600 font-bold"; // Khá
-    return "text-gray-600 font-bold"; // Trung bình
+  const getCPAColor = (hangBang: string) => {
+    // Chuyển về lowercase và loại bỏ dấu để so sánh cho an toàn
+    const grade = hangBang?.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    
+    switch (grade) {
+      case "xuat sac":
+        return "text-yellow-600 font-bold";
+      case "gioi":
+        return "text-green-600 font-bold";
+      case "kha":
+        return "text-blue-600 font-bold";
+      case "trung binh":
+      default:
+        return "text-gray-600 font-bold";
   };
+}
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -323,7 +332,7 @@ export default function Home() {
                               </div>
                               <div
                                 className={`text-4xl md:text-5xl font-lalezar ${getCPAColor(
-                                  record.cpa
+                                  record.hang_bang
                                 )}`}
                               >
                                 {record.cpa || "N/A"}
