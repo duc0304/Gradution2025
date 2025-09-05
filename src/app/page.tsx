@@ -425,7 +425,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto px-4">
             <div className="bg-white rounded-xl md:rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
               {/* Instructions Header */}
-              <div className="bg-gradient-to-r from-gray-800 to-black px-4 md:px-8 py-4 md:py-6">
+              <div className="bg-black-800 bg-gradient-to-r from-gray-800 to-black px-4 md:px-8 py-4 md:py-6">
                 <h3 className="text-lg md:text-3xl font-lalezar font-bold text-blue text-center">
                   📖 HƯỚNG DẪN SỬ DỤNG HỆ THỐNG
                 </h3>
